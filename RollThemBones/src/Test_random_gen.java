@@ -1,4 +1,23 @@
+import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Test;
+
+class MainTest {
+
+	@Test
+	void diceNumber() {
+		assertEquals(4,playersDice());
+	
+	}
+	
+	public static int playersDice() {
+		int[] playersDice = {1,2,3,4,5,6};
+    	int random = (int) (Math.random()*6);
+    	
+    	System.out.println("You rolled: " + playersDice[random]);
+    	return playersDice[random];
+    	}
+	}
 
 
 
