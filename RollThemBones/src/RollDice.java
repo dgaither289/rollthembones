@@ -5,9 +5,11 @@ public class RollDice {
 		int dice1 = playersDice();
 		int dice2 = playersDice();
 		
-	
+		int hand = diceHand(dice1,dice2);
 		
+		System.out.println("You rolled a " + hand);
 		
+		firstRoll(hand);
 	}
 	
 	
@@ -17,6 +19,21 @@ public class RollDice {
     	int random = (int) (Math.random()*6);
     	return playersDice[random];
     	}
+	
+	//Adding the dice together to get the Total value
+	public static int diceHand(int dice1, int dice2) {
+		int sum = dice1 + dice2;
+		return sum;
+	}
+	
+	public static void firstRoll(int x) {
+		if(x == 7 || x == 11) {
+			System.out.println("YOU WIN!!");
+		}
+	}
+	
+	
+	
 }
 
 

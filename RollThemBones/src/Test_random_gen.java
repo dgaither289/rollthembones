@@ -1,3 +1,4 @@
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -5,9 +6,8 @@ import org.junit.jupiter.api.Test;
 class MainTest {
 
 	@Test
-	void diceNumber() {
-		assertEquals(4,playersDice());
-	
+	void diceNumberCheck() {
+//		assertEquals(4,playersDice());
 	}
 	
 	public static int playersDice() {
@@ -17,7 +17,30 @@ class MainTest {
     	System.out.println("You rolled: " + playersDice[random]);
     	return playersDice[random];
     	}
+	
+	@Test
+	void diceHandCheck() {
+		assertEquals(7,diceHand(3,4));
 	}
+	
+	public static int diceHand(int dice1, int dice2) {
+		int sum = dice1 + dice2;
+		return sum;
+	}
+
+//	@Test void checkToSeeIfFirstRollIsAWin() {
+//		assertEquals("YOU WIN!!",firstRoll(7));
+//	}
+	 static void firstRoll(int x) {
+		if(x == 7 || x == 11) {
+			System.out.println("YOU WIN!!");
+		}
+	}
+	
+	
+}
+
+	
 
 
 
