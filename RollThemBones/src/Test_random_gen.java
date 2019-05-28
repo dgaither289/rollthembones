@@ -28,14 +28,7 @@ class MainTest {
 		return sum;
 	}
 
-//	@Test void checkToSeeIfFirstRollIsAWin() {
-//		assertEquals("YOU WIN!!",firstRoll(7));
-//	}
-	 static void firstRoll(int x) {
-		if(x == 7 || x == 11) {
-			System.out.println("YOU WIN!!");
-		}
-	}
+	
 	
 	
 }

@@ -10,6 +10,9 @@ public class RollDice {
 		System.out.println("You rolled a " + hand);
 		
 		firstRoll(hand);
+		
+
+		
 	}
 	
 	
@@ -26,11 +29,16 @@ public class RollDice {
 		return sum;
 	}
 	
-	public static void firstRoll(int x) {
+	public static int firstRoll(int x) {
 		if(x == 7 || x == 11) {
 			System.out.println("YOU WIN!!");
 		}
+		else if(x == 2 || x == 3 || x == 12) {
+			System.out.println("You lose :(");
+		}
+		return x;
 	}
+	
 	
 	
 	
