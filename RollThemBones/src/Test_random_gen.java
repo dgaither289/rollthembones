@@ -42,5 +42,4 @@ class Test_random_gen {
 		}
 		return false;
 	}
-	
 }

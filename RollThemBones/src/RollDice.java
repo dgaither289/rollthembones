@@ -26,7 +26,7 @@ public class RollDice {
 		return sum;
 	}
 	
-	//Method that starts the game and determines if you're a winner or loser.	
+	//Method to check the roll value and determine if it is a winning hand or lose hand.	
 	public static void firstRoll(int x) {
 		if(x == 7 || x == 11) {
 			System.out.println("YOU WIN!!");
@@ -37,16 +37,13 @@ public class RollDice {
 		else {
 			System.out.println("POINT is " + x);
 			int newRoll = playersDice();
-			while(x != newRoll) {
 				int dice3 = playersDice();
 				System.out.println("You rolled " + dice3 + " POINT is " + x);
 				if (dice3 == x) {
 					System.out.println("You Win Game Over.");
-					break;
 				}
 				else if(dice3 == 7){
 					System.out.println("Sorry bud you lose.");
-					break;
 				}
 				else {
 					while(dice3 != x) {
@@ -62,8 +59,6 @@ public class RollDice {
 						}
 					}
 				}
-				break;
-			}
 		}
 	}
 }
