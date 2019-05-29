@@ -1,18 +1,15 @@
 
 public class RollDice {
+	static int dice1 = playersDice();
+	static int dice2 = playersDice();
+	static int point = diceHand(dice1,dice2);
+	static int dice3 = playersDice();
+	
 	public static void main(String[] args) {
 		//Getting the values for two dice.
-		int dice1 = playersDice();
-		int dice2 = playersDice();
 		
-		int hand = diceHand(dice1,dice2);
-		
-		System.out.println("You rolled a " + hand);
-		
-		firstRoll(hand);
-		
-
-		
+		System.out.println("You rolled a " + point);
+		firstRoll(point);
 	}
 	
 	
@@ -29,55 +26,45 @@ public class RollDice {
 		return sum;
 	}
 	
-	public static int firstRoll(int x) {
+	//Method that starts the game and determines if you're a winner or loser.	
+	public static void firstRoll(int x) {
 		if(x == 7 || x == 11) {
 			System.out.println("YOU WIN!!");
 		}
 		else if(x == 2 || x == 3 || x == 12) {
 			System.out.println("You lose :(");
 		}
-		return x;
+		else {
+			System.out.println("POINT is " + x);
+			int newRoll = playersDice();
+			while(x != newRoll) {
+				int dice3 = playersDice();
+				System.out.println("You rolled " + dice3 + " POINT is " + x);
+				if (dice3 == x) {
+					System.out.println("You Win Game Over.");
+					break;
+				}
+				else if(dice3 == 7){
+					System.out.println("Sorry bud you lose.");
+					break;
+				}
+				else {
+					while(dice3 != x) {
+						dice3 = diceHand(playersDice(),playersDice());
+						System.out.println("You rolled " + dice3 + " POINT is " + x);
+						if(dice3 == x) {
+							System.out.println("You Win!");
+							break;
+						}
+						else if(dice3 == 7) {
+							System.out.println("Take this L buddy.");
+							break;
+						}
+					}
+				}
+				break;
+			}
+		}
 	}
-	
-	
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//# Mid Course Project
-//
-//Given the following rules for the game of dice, create a program that prints out whether you won or lost on each roll. Below are the requirements for this program. 
-//
-//The player rolls two 6-sided dice (hint: use 1 + (int)(Math.random() * 6) ) to generate a random number between 1 and 6.
-//
-//Rolling 7 or 11 on the first try is a WIN 
-//Rolling 2, 3 or 12 on the first try is a LOSE 
-//Any other roll on the first try becomes the player's POINT 
-//If a player rolled POINT, the player continues to roll until one of two things happens:
-//If a player has POINT and rolls the POINT again, it is a WIN 
-//If a player has POINT and rolls 7, it is a LOST 
-//
-//Example runs:
-//
-//You rolled 7.
-//You win!
-//
-//You rolled 12.
-//You lose!
-//
-//You rolled 4. POINT is 4.
-//You rolled 3. POINT is 4.
-//You rolled 11. POINT is 4.
-//You rolled 4.
-//You win!
+	
