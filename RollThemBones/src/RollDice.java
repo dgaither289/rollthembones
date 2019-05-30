@@ -3,7 +3,6 @@ public class RollDice {
 	static int dice1 = playersDice();
 	static int dice2 = playersDice();
 	static int point = diceHand(dice1,dice2);
-	static int dice3 = playersDice();
 	
 	public static void main(String[] args) {
 		//Getting the values for two dice.
@@ -11,7 +10,6 @@ public class RollDice {
 		System.out.println("You rolled a " + point);
 		firstRoll(point);
 	}
-	
 	
 	//Getting the Rolled Dice Value
 	public static int playersDice() {
@@ -37,29 +35,29 @@ public class RollDice {
 		else {
 			System.out.println("POINT is " + x);
 			int newRoll = playersDice();
-				int dice3 = playersDice();
-				System.out.println("You rolled " + dice3 + " POINT is " + x);
-				if (dice3 == x) {
-					System.out.println("You Win Game Over.");
+			int dice3 = playersDice();
+			System.out.println("You rolled " + dice3 + " POINT is " + x);
+			if (dice3 == x) {
+				System.out.println("You Win Game Over.");
 				}
-				else if(dice3 == 7){
-					System.out.println("Sorry bud you lose.");
+			else if(dice3 == 7){
+				System.out.println("Sorry bud you lose.");
 				}
-				else {
-					while(dice3 != x) {
-						dice3 = diceHand(playersDice(),playersDice());
-						System.out.println("You rolled " + dice3 + " POINT is " + x);
-						if(dice3 == x) {
-							System.out.println("You Win!");
-							break;
+			else {
+				while(dice3 != x) {
+					dice3 = diceHand(playersDice(),playersDice());
+					System.out.println("You rolled " + dice3 + " POINT is " + x);
+					if(dice3 == x) {
+						System.out.println("You Win!");
+						break;
 						}
-						else if(dice3 == 7) {
-							System.out.println("Take this L buddy.");
-							break;
+					else if(dice3 == 7) {
+						System.out.println("Take this L buddy.");
+						break;
 						}
 					}
 				}
+			}
 		}
-	}
 }
 	
